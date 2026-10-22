@@ -123,9 +123,9 @@ public class JoinApprovalController {
         try {
             // サービスからdeleteメソッドを呼び出す
             /*
-             * TODO ➊ ユーザーを否認する際の処理を完成させる。
+             * 
              */
-
+            joinApprovalService.deleteRequestInfo(paramDto);
             // deleteに成功した場合、部員登録承認画面に遷移
             mav.addObject("leaderClubId", leaderClubId);
             mav.setViewName("redirect:/joinApproval");
@@ -164,6 +164,8 @@ public class JoinApprovalController {
             /*
              * TODO ➋ ユーザーを承認する際の処理を完成させる。
              */
+            joinApprovalService.insertRequestInfo(paramDto);
+            joinApprovalService.deleteRequestInfo(paramDto);
 
             // insert, deleteに成功した場合、部員登録承認画面に遷移
             mav.addObject("leaderClubId", leaderClubId);
